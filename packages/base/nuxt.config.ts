@@ -1,15 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  imports: {
-    dirs: [
-      'utils',
-    ]
-  },
+    devtools: { enabled: true },
 
-  runtimeConfig: {
-    public: {
-      //
-    }
-  }
-})
+    modules: ["@nuxtjs/tailwindcss"],
+
+    postcss: {
+        plugins: {
+            tailwindcss: {},
+            autoprefixer: {},
+        },
+    },
+
+    imports: {
+        dirs: ["utils"],
+    },
+
+    runtimeConfig: {
+        public: {
+            //
+        },
+    },
+});
