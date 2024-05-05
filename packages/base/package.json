@@ -1,14 +1,7 @@
 {
-  "name": "nuxt-app",
+  "name": "base",
   "private": true,
   "type": "module",
-  "scripts": {
-    "build": "nuxi build",
-    "dev": "nuxi dev --port 3000",
-    "generate": "nuxi generate",
-    "preview": "nuxi preview",
-    "postinstall": "nuxi prepare"
-  },
   "dependencies": {
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
