@@ -14,31 +14,17 @@
 Make sure to install the dependencies:
 
 ```bash
-
 pnpm install
-
 ```
 
 ## Development
 
 ```bash
-
-# all package
 pnpm dev
-
-# app only
-pnpm app dev
-
 ```
 
 ## Production
 
 ```bash
-
-# all package
 pnpm build
-
-# app onky
-pnpm app build
-
 ```

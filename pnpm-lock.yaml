@@ -9,10 +9,22 @@ importers:
   .:
     devDependencies:
       dotenv-cli:
-        specifier: ^7.4.0
+        specifier: ^7.4.1
         version: 7.4.1
 
   packages/app:
+    dependencies:
+      nuxt:
+        specifier: ^3.11.2
+        version: 3.11.2(@opentelemetry/api@1.8.0)(@parcel/watcher@2.4.1)(@types/node@20.12.8)(@unocss/reset@0.59.4)(encoding@0.1.13)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.17.2))(vue@3.4.26))(ioredis@5.4.1)(rollup@4.17.2)(terser@5.31.0)(unocss@0.59.4(postcss@8.4.38)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.8)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.8)(terser@5.31.0))
+      vue:
+        specifier: ^3.4.21
+        version: 3.4.26
+      vue-router:
+        specifier: ^4.3.0
+        version: 4.3.2(vue@3.4.26)
+
+  packages/base:
     dependencies:
       nuxt:
         specifier: ^3.11.2

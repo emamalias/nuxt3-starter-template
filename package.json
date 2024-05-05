@@ -1,12 +1,11 @@
 {
-    "name": "next3-starter-template",
+    "name": "nuxt3-starter-template",
     "scripts": {
         "packages": "dotenv -- pnpm --filter",
-        "app": "pnpm packages @next3-starter-template/app",
         "dev": "dotenv -- pnpm -r dev",
         "build": "dotenv -- pnpm -r build"
     },
     "devDependencies": {
-        "dotenv-cli": "^7.4.0"
+        "dotenv-cli": "^7.4.1"
     }
 }
