@@ -11,6 +11,12 @@
           #default="{ value }"
           :config="{ validationVisibility: 'submit' }"
         >
+
+          <FormKit
+            type="button"
+            label="Regular button"
+            help="You can use the label prop."
+          />
           
           <FormKit 
             type="email" 

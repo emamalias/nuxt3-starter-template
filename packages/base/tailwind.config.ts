@@ -23,6 +23,8 @@ export default {
         warning: "rgb(var(--color-warning) / <alpha-value>)",
         danger: "rgb(var(--color-danger) / <alpha-value>)",
         info: "rgb(var(--color-info) / <alpha-value>)",
+        transparent: "transparent",
+        current: "currentColor",
       }
     }
   },

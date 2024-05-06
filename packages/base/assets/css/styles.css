@@ -7,33 +7,30 @@
 }
 
 @layer base {
-    
 
-    /* @media (prefers-color-scheme: dark) {
-        :root {
-            --color-primary: 241 245 249;
-            --color-text: 245 245 245;
-        }
-    }
-
-    @media (prefers-color-scheme: light) {
-        :root {
-            --color-primary: 241 245 249;
-            --color-text: 245 245 245;
-        }
-    } */
-
-    :root {
-        --color-primary: 51 65 85;
+    /* slate */
+    /* :root {
+        --color-primary: 51 65 85; 
         --color-text: 39 39 42;
     }
 
     :root[class~="dark-mode"] {
         --color-primary: 241 245 249;
         --color-text: 245 245 245;
-    }
-}
+    } */
 
-.fk-inner {
-    @apply focus-within:ring-primary
+    /* indigo */
+    :root {
+        --color-primary: 79 70 229; 
+        --color-text: 39 39 42;
+    }
+
+    :root[class~="dark-mode"] {
+        --color-primary: 79 70 229;
+        --color-text: 245 245 245;
+    }
+
+    .ring-current {
+        @apply ring-primary;
+    }
 }
