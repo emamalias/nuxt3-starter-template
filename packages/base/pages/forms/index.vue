@@ -217,7 +217,7 @@
 
 const submitted = ref(false)
 
-const validateOn = 'live'
+const validateOn = 'submit' // blur | live | dirty | submit
 
 const submitHandler = async () => {
   // Let's pretend this is an ajax request:

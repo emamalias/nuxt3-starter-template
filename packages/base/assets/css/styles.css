@@ -22,7 +22,7 @@
     }
 
     /* indigo */
-    :root {
+    /* :root {
         --color-primary: 79 70 229; 
         --color-text: 39 39 42;
     }
@@ -30,7 +30,7 @@
     :root[class~="dark-mode"] {
         --color-primary: 99 102 241;
         --color-text: 245 245 245;
-    }
+    } */
 
     .ring-current {
         @apply ring-primary;
