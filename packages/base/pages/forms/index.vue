@@ -2,7 +2,7 @@
   <NuxtLayout>
     <template #default>
       <div class="w-full">
-        <h1 class="text-2xl font-semibold my-4">All fields</h1>
+        <h1 class="text-2xl font-semibold my-4">All fields mode: </h1>
         <FormKit 
           type="form" 
           :form-class="submitted ? 'hide' : 'show'"
@@ -176,6 +176,7 @@
 </template>
 
 <script setup lang="ts">
+
 const submitted = ref(false)
 
 const submitHandler = async () => {

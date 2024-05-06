@@ -11,17 +11,20 @@ export default {
     "./error.vue",
     "./formkit.theme.ts",
   ],
+  plugins: [],
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
-        primary: {
-          ...colors.gray,
-          DEFAULT: colors.gray[700],
-        }
+        primary: "rgb(var(--color-primary) / <alpha-value>)",
+        text: "rgb(var(--color-text) / <alpha-value>)",
+        secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+        success: "rgb(var(--color-success) / <alpha-value>)",
+        warning: "rgb(var(--color-warning) / <alpha-value>)",
+        danger: "rgb(var(--color-danger) / <alpha-value>)",
+        info: "rgb(var(--color-info) / <alpha-value>)",
       }
-    },
+    }
   },
-  plugins: [],
-  darkMode: 'class',
 }
 

@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
     devtools: { enabled: true },
 
-    modules: ["@nuxtjs/tailwindcss", "@formkit/nuxt"],
+    modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@formkit/nuxt"],
 
     css: [
         "~base/assets/css/styles.css"

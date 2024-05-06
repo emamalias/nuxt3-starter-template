@@ -47,6 +47,20 @@ export function rootClasses(
     return classes[memoKey] ?? { [semanticKey]: true };
 }
 
+const labelClasses = {
+    block: true,
+    "text-neutral-700": true,
+    "mb-1": true,
+    "font-semibold": true,
+    "dark:text-neutral-100": true,
+}
+
+const helperClasses = {
+    "text-neutral-500": true,
+    "text-sm": true,
+    "dark:text-neutral-400": true,
+}
+
 /**
  * These classes have already been merged with globals using tailwind-merge
  * and are ready to be used directly in the theme.
@@ -65,12 +79,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     "family:button__wrapper": {
         "mb-1.5": true,
-    },
-    "family:button__label": {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     "family:button__prefixIcon": {
         flex: true,
@@ -112,19 +120,13 @@ const classes: Record<string, Record<string, boolean>> = {
         "outline-none": true,
         "text-neutral-900": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "group-data-[disabled]:!cursor-not-allowed": true,
         "group-data-[prefix-icon]:pl-5": true,
         "group-data-[suffix-icon]:pr-5": true,
         "focus:ring-2": true,
-        "ring-primary": true,
         "focus:border-opacity-0": true,
         "dark:border-neutral-100": true,
-        "dark:text-neutral-100": true,
-    },
-    "family:button__help": {
-        "text-neutral-900": true,
-        "text-sm": true,
         "dark:text-neutral-100": true,
     },
     "family:button__messages": {
@@ -195,7 +197,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "w-[1em]": true,
         "aspect-[1/1]": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "mr-1.5": true,
         "text-transparent": true,
         "peer-checked:text-neutral-900": true,
@@ -265,12 +267,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "justify-start": true,
         "last:mb-0": true,
     },
-    "family:text__label": {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
-    },
     "family:text__prefixIcon": {
         flex: true,
         "shrink-0": true,
@@ -307,7 +303,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "border-neutral-500": true,
         flex: true,
         "items-center": true,
-        "ring-primary focus-within:ring-2 focus-within:border-opacity-0": true,
+        "focus-within:ring-2 focus-within:border-opacity-0": true,
         "group-data-[disabled]:!cursor-not-allowed": true,
         "dark:border-neutral-100": true,
     },
@@ -326,11 +322,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "border-none": true,
         "p-0": true,
         "focus:ring-0": true,
-        "dark:text-neutral-100": true,
-    },
-    "family:text__help": {
-        "text-neutral-900": true,
-        "text-sm": true,
         "dark:text-neutral-100": true,
     },
     "family:text__messages": {
@@ -356,19 +347,13 @@ const classes: Record<string, Record<string, boolean>> = {
     "family:dropdown__wrapper": {
         "mb-1.5": true,
     },
-    "family:dropdown__label": {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
-    },
     "family:dropdown__inner": {
         relative: true,
         flex: true,
         "items-center": true,
         border: true,
         "border-neutral-500": true,
-        "ring-primary focus-within:ring-2 focus-within:border-opacity-0": true,
+        "focus-within:ring-2 focus-within:border-opacity-0": true,
         "rounded-none": true,
         "group-data-[is-multiline]:!rounded-none": true,
         "dark:border-neutral-100": true,
@@ -544,7 +529,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "rounded-none": true,
         "empty:hidden": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "dark:border-neutral-100": true,
         "group-data-[overscroll]:shadow-none": true,
         "group-data-[overscroll]:border-none": true,
@@ -556,7 +541,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "empty:hidden": true,
         "dark:bg-neutral-900": true,
         "group-data-[overscroll]:border": true,
-        "group-data-[overscroll]:border-neutral-900": true,
+        "group-data-[overscroll]:border-neutral-500": true,
         "group-data-[overscroll]:dark:border-neutral-100": true,
     },
     "family:dropdown__listitemGroup": {
@@ -566,7 +551,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "border-t": true,
         "border-b": true,
         "-mb-px": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "dark:border-neutral-100": true,
     },
     "family:dropdown__groupLabel": {
@@ -640,11 +625,6 @@ const classes: Record<string, Record<string, boolean>> = {
     "family:dropdown__emptyMessageInner": {
         "": true,
     },
-    "family:dropdown__help": {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     "family:dropdown__messages": {
         "": true,
     },
@@ -667,12 +647,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     button__wrapper: {
         "mb-1.5": true,
-    },
-    button__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     button__prefixIcon: {
         flex: true,
@@ -704,11 +678,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    button__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     button__messages: {
         "": true,
     },
@@ -736,15 +705,8 @@ const classes: Record<string, Record<string, boolean>> = {
         "": true,
     },
     checkbox__legend: {
-        block: true,
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
-    checkbox__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
+        ...labelClasses,
+        "text-sm": false,
     },
     checkbox__inner: {
         "": true,
@@ -762,10 +724,8 @@ const classes: Record<string, Record<string, boolean>> = {
         "max-w-[66.66%]": true,
     },
     checkbox__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
+        ...labelClasses,
+        "font-semibold": false,
     },
     checkbox__optionHelp: {
         "": true,
@@ -793,12 +753,6 @@ const classes: Record<string, Record<string, boolean>> = {
     color__wrapper: {
         "mb-1.5": true,
     },
-    color__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
-    },
     color__prefixIcon: {
         flex: true,
         "shrink-0": true,
@@ -823,6 +777,9 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     color__inner: {
         "!w-auto": true,
+        "py-2": false,
+        "px-3": false,
+        "p-2": true,
     },
     color__input: {
         "appearance-none": true,
@@ -836,11 +793,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "[&::-webkit-color-swatch-wrapper]:p-0": true,
         "[&::-webkit-color-swatch]:border-none": true,
         "[&::-moz-color-swatch]:border-none": true,
-    },
-    color__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
     },
     color__messages: {
         "": true,
@@ -864,12 +816,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     date__wrapper: {
         "mb-1.5": true,
-    },
-    date__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     date__prefixIcon: {
         flex: true,
@@ -904,11 +850,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    date__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     date__messages: {
         "": true,
     },
@@ -931,12 +872,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     "datetime-local__wrapper": {
         "mb-1.5": true,
-    },
-    "datetime-local__label": {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     "datetime-local__prefixIcon": {
         flex: true,
@@ -971,11 +906,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    "datetime-local__help": {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     "datetime-local__messages": {
         "": true,
     },
@@ -998,12 +928,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     email__wrapper: {
         "mb-1.5": true,
-    },
-    email__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     email__prefixIcon: {
         flex: true,
@@ -1038,11 +962,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    email__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     email__messages: {
         "": true,
     },
@@ -1065,12 +984,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     file__wrapper: {
         "mb-1.5": true,
-    },
-    file__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     file__prefixIcon: {
         flex: true,
@@ -1169,11 +1082,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "w-[1em]": true,
         "mr-2": true,
     },
-    file__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     file__messages: {
         "": true,
     },
@@ -1192,7 +1100,7 @@ const classes: Record<string, Record<string, boolean>> = {
     form__summaryInner: {
         "group/summary": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "rounded-none": true,
         "py-2": true,
         "px-3": true,
@@ -1228,12 +1136,6 @@ const classes: Record<string, Record<string, boolean>> = {
     month__wrapper: {
         "mb-1.5": true,
     },
-    month__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
-    },
     month__prefixIcon: {
         flex: true,
         "shrink-0": true,
@@ -1267,11 +1169,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    month__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     month__messages: {
         "": true,
     },
@@ -1294,12 +1191,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     number__wrapper: {
         "mb-1.5": true,
-    },
-    number__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     number__prefixIcon: {
         flex: true,
@@ -1334,11 +1225,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    number__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     number__messages: {
         "": true,
     },
@@ -1361,12 +1247,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     password__wrapper: {
         "mb-1.5": true,
-    },
-    password__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     password__prefixIcon: {
         flex: true,
@@ -1401,11 +1281,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    password__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     password__messages: {
         "": true,
     },
@@ -1433,15 +1308,8 @@ const classes: Record<string, Record<string, boolean>> = {
         "": true,
     },
     radio__legend: {
-        block: true,
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
-    radio__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
+        ...labelClasses,
+        "text-sm": false,
     },
     radio__inner: {
         "": true,
@@ -1459,10 +1327,8 @@ const classes: Record<string, Record<string, boolean>> = {
         "max-w-[50%]": true,
     },
     radio__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
+        ...labelClasses,
+        "font-semibold": false,
     },
     radio__optionHelp: {
         "": true,
@@ -1489,12 +1355,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     range__wrapper: {
         "mb-1.5": true,
-    },
-    range__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     range__prefixIcon: {
         flex: true,
@@ -1559,11 +1419,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "[&::-moz-range-thumb]:focus-visible:ring-2": true,
         "dark:[&::-moz-range-thumb]:bg-neutral-400": true,
     },
-    range__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     range__messages: {
         "": true,
     },
@@ -1586,12 +1441,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     search__wrapper: {
         "mb-1.5": true,
-    },
-    search__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     search__prefixIcon: {
         flex: true,
@@ -1626,11 +1475,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    search__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     search__messages: {
         "": true,
     },
@@ -1653,12 +1497,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     select__wrapper: {
         "mb-1.5": true,
-    },
-    select__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     select__prefixIcon: {
         flex: true,
@@ -1691,9 +1529,9 @@ const classes: Record<string, Record<string, boolean>> = {
         flex: true,
         "items-center": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "rounded-none": true,
-        "ring-primary focus-within:ring-2 focus-within:border-opacity-0": true,
+        "focus-within:ring-2 focus-within:border-opacity-0": true,
         "group-data-[multiple]:rounded-none": true,
         "dark:border-neutral-100": true,
     },
@@ -1750,11 +1588,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "dark:text-neutral-100": true,
         "dark:bg-neutral-900": true,
     },
-    select__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     select__messages: {
         "": true,
     },
@@ -1777,12 +1610,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     submit__wrapper: {
         "mb-1.5": true,
-    },
-    submit__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     submit__prefixIcon: {
         flex: true,
@@ -1814,11 +1641,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    submit__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     submit__messages: {
         "": true,
     },
@@ -1841,12 +1663,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     tel__wrapper: {
         "mb-1.5": true,
-    },
-    tel__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     tel__prefixIcon: {
         flex: true,
@@ -1881,11 +1697,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    tel__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     tel__messages: {
         "": true,
     },
@@ -1908,12 +1719,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     text__wrapper: {
         "mb-1.5": true,
-    },
-    text__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     text__prefixIcon: {
         flex: true,
@@ -1948,11 +1753,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    text__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     text__messages: {
         "": true,
     },
@@ -1975,12 +1775,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     textarea__wrapper: {
         "mb-1.5": true,
-    },
-    textarea__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     textarea__prefixIcon: {
         flex: true,
@@ -2017,9 +1811,9 @@ const classes: Record<string, Record<string, boolean>> = {
         "items-center": true,
         "mb-1.5": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "rounded-none": true,
-        "ring-primary focus-within:ring-2 focus-within:border-opacity-0": true,
+        "focus-within:ring-2 focus-within:border-opacity-0": true,
         "dark:border-neutral-100": true,
     },
     textarea__input: {
@@ -2043,11 +1837,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "border-none": true,
         "focus:ring-0": true,
     },
-    textarea__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     textarea__messages: {
         "": true,
     },
@@ -2070,12 +1859,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     time__wrapper: {
         "mb-1.5": true,
-    },
-    time__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     time__prefixIcon: {
         flex: true,
@@ -2110,11 +1893,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    time__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     time__messages: {
         "": true,
     },
@@ -2137,12 +1915,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     url__wrapper: {
         "mb-1.5": true,
-    },
-    url__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     url__prefixIcon: {
         flex: true,
@@ -2177,11 +1949,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    url__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     url__messages: {
         "": true,
     },
@@ -2204,12 +1971,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     week__wrapper: {
         "mb-1.5": true,
-    },
-    week__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     week__prefixIcon: {
         flex: true,
@@ -2244,11 +2005,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "placeholder:text-neutral-400": true,
         "dark:placeholder:text-neutral-500": true,
     },
-    week__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     week__messages: {
         "": true,
     },
@@ -2271,12 +2027,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     autocomplete__wrapper: {
         "mb-1.5": true,
-    },
-    autocomplete__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     autocomplete__inner: {
         "": true,
@@ -2324,7 +2074,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "bg-neutral-100": true,
         "rounded-none": true,
         "group-data-[multiple]:border": true,
-        "group-data-[multiple]:border-neutral-900": true,
+        "group-data-[multiple]:border-neutral-500": true,
         "group-data-[multiple]:mb-1.5": true,
         "outline-none": true,
         "data-[active-selection=true]:ring-2": true,
@@ -2384,11 +2134,6 @@ const classes: Record<string, Record<string, boolean>> = {
     autocomplete__emptyMessageInner: {
         "": true,
     },
-    autocomplete__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     autocomplete__messages: {
         "": true,
     },
@@ -2411,12 +2156,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     colorpicker__wrapper: {
         "mb-1.5": true,
-    },
-    colorpicker__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     colorpicker__inner: {
         relative: true,
@@ -2485,7 +2224,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "group-data-[inline]:max-w-none": true,
         "group-data-[inline]:bg-transparent": true,
         "group-data-[inline]:border": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "dark:border-neutral-100": true,
         "[@media(max-width:431px)_and_(hover:none)]:group-[&:not([data-inline])]:!fixed":
             true,
@@ -2507,7 +2246,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "text-neutral-900": true,
         "mb-1.5": true,
         "border-b": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "pb-2": true,
         "dark:text-neutral-100": true,
         "dark:border-neutral-100": true,
@@ -2518,7 +2257,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "p-1": true,
         "rounded-none": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "dark:border-neutral-100": true,
         "[&>svg]:w-full": true,
         "[&>svg]:aspect-[1/1]": true,
@@ -2621,7 +2360,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "cursor-pointer": true,
         "rounded-none": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "text-neutral-900": true,
         "dark:border-neutral-100": true,
         "dark:text-neutral-100": true,
@@ -2657,7 +2396,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "[&>input]:shrink": true,
         "[&>input]:w-full": true,
         "[&>input]:border": true,
-        "[&>input]:border-neutral-900": true,
+        "[&>input]:border-neutral-500": true,
         "[&>input]:rounded-none": true,
         "[&>input]:text-center": true,
         "[&>input]:appearance-none": true,
@@ -2674,7 +2413,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "bg-transparent": true,
         "text-neutral-900": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "dark:text-neutral-100": true,
         "dark:border-neutral-100": true,
     },
@@ -2709,7 +2448,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "mt-2": true,
         "-mb-2": true,
         "border-t": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "overflow-auto": true,
         "max-h-[200px]": true,
         "select-none": true,
@@ -2797,12 +2536,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     datepicker__wrapper: {
         "mb-1.5": true,
-    },
-    datepicker__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     datepicker__inner: {
         relative: true,
@@ -2912,7 +2645,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "p-4": true,
         "bg-white": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "z-[99]": true,
         "dark:bg-neutral-900": true,
         "dark:border-neutral-100": true,
@@ -2937,7 +2670,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "justify-center": true,
         "items-center": true,
         "border-b-2": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "mb-2": true,
         "pb-2.5": true,
         "dark:border-neutral-100": true,
@@ -3128,7 +2861,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "[color-scheme:light]": true,
         "dark:[color-scheme:dark]": true,
         "text-neutral-900": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "rounded-none": true,
         "py-2": true,
         "px-3": true,
@@ -3144,7 +2877,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "px-2.5": true,
         "py-0.5": true,
         "border-2": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "mx-1": true,
         "focus-visible:outline-none": true,
         "focus-visible:ring-2": true,
@@ -3157,7 +2890,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "px-2.5": true,
         "py-0.5": true,
         "border-2": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "mx-1": true,
         "focus-visible:outline-none": true,
         "focus-visible:ring-2": true,
@@ -3170,17 +2903,12 @@ const classes: Record<string, Record<string, boolean>> = {
         "px-2.5": true,
         "py-0.5": true,
         "border-2": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "mx-1": true,
         "focus-visible:outline-none": true,
         "focus-visible:ring-2": true,
         "dark:text-neutral-100": true,
         "dark:border-neutral-100": true,
-    },
-    datepicker__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
     },
     datepicker__messages: {
         "": true,
@@ -3204,12 +2932,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     dropdown__wrapper: {
         "mb-1.5": true,
-    },
-    dropdown__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     dropdown__inner: {
         "": true,
@@ -3342,11 +3064,6 @@ const classes: Record<string, Record<string, boolean>> = {
     dropdown__option: {
         "": true,
     },
-    dropdown__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     dropdown__messages: {
         "": true,
     },
@@ -3369,12 +3086,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     mask__wrapper: {
         "mb-1.5": true,
-    },
-    mask__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     mask__inner: {
         relative: true,
@@ -3434,11 +3145,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "text-neutral-900": true,
         "dark:text-neutral-100": true,
     },
-    mask__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
-    },
     mask__messages: {
         "": true,
     },
@@ -3461,12 +3167,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     rating__wrapper: {
         "mb-1.5": true,
-    },
-    rating__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     rating__inner: {
         flex: true,
@@ -3596,7 +3296,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "w-full": true,
         "mb-2": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "rounded-none": true,
         "dark:border-neutral-100": true,
         "[&.formkit-dropZone]:opacity-30": true,
@@ -3725,12 +3425,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     slider__wrapper: {
         "mb-1.5": true,
-    },
-    slider__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     slider__help: {
         "text-neutral-900": true,
@@ -3862,7 +3556,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "-translate-x-1/2": true,
         "-translate-y-1/2": true,
         "border-2": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "focus-visible:outline-0": true,
         "focus-visible:ring-2": true,
         "data-[is-target=true]:z-20": true,
@@ -3949,12 +3643,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     taglist__wrapper: {
         "mb-1.5": true,
-    },
-    taglist__label: {
-        block: true,
-        "text-neutral-900": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
     },
     taglist__inner: {
         "py-2": true,
@@ -4053,11 +3741,6 @@ const classes: Record<string, Record<string, boolean>> = {
     },
     taglist__option: {
         "": true,
-    },
-    taglist__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
     },
     taglist__messages: {
         "": true,
@@ -4166,11 +3849,6 @@ const classes: Record<string, Record<string, boolean>> = {
         "mb-1": true,
         "dark:text-neutral-100": true,
         "peer-first:mb-0": true,
-    },
-    toggle__help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
     },
     toggle__messages: {
         "": true,
@@ -4309,7 +3987,7 @@ const classes: Record<string, Record<string, boolean>> = {
         flex: true,
         "flex-col": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "rounded-none": true,
         "select-none": true,
         "dark:border-neutral-100": true,
@@ -4321,7 +3999,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "justify-between": true,
         "items-center": true,
         "border-b": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "py-2": true,
         "px-2.5": true,
         "dark:border-neutral-100": true,
@@ -4340,13 +4018,13 @@ const classes: Record<string, Record<string, boolean>> = {
     transferlist__transferlistControls: {
         "p-2": true,
         "border-b": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "dark:border-neutral-100": true,
     },
     transferlist__transferlistSearch: {
         border: true,
         "rounded-none": true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "text-neutral-900": true,
         "px-2.5": true,
         "py-2": true,
@@ -4511,7 +4189,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "grow-0": true,
         shrink: true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "rounded-none": true,
         "overflow-clip": true,
         "my-2": true,
@@ -4737,7 +4415,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "group-data-[tab-style=tab]/wrapper:overflow-auto": true,
         "group-data-[tab-style=tab]/wrapper:border": true,
         "group-data-[tab-style=tab]/wrapper:border-b-0": true,
-        "group-data-[tab-style=tab]/wrapper:border-neutral-900": true,
+        "group-data-[tab-style=tab]/wrapper:border-neutral-500": true,
         "group-data-[tab-style=tab]/wrapper:rounded-none": true,
         "group-data-[tab-style=tab]/wrapper:rounded-bl-none": true,
         "group-data-[tab-style=tab]/wrapper:rounded-br-none": true,
@@ -4763,7 +4441,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "group-data-[tab-style=tab]/wrapper:px-4": true,
         "group-data-[tab-style=tab]/wrapper:border-r": true,
         "group-data-[tab-style=tab]/wrapper:border-b": true,
-        "group-data-[tab-style=tab]/wrapper:border-neutral-900": true,
+        "group-data-[tab-style=tab]/wrapper:border-neutral-500": true,
         "group-data-[tab-style=tab]/wrapper:last:border-r-0": true,
         "group-data-[tab-style=tab]/wrapper:data-[active=true]:bg-white": true,
         "group-data-[tab-style=tab]/wrapper:data-[active=true]:border-b-transparent":
@@ -4859,7 +4537,7 @@ const classes: Record<string, Record<string, boolean>> = {
         "pb-4": true,
         "bg-white": true,
         border: true,
-        "border-neutral-900": true,
+        "border-neutral-500": true,
         "rounded-none": true,
         "dark:bg-transparent": true,
         "dark:border-neutral-100": true,
@@ -4903,11 +4581,7 @@ const globals: Record<string, Record<string, boolean>> = {
         "mb-1.5": true,
     },
     label: {
-        block: true,
-        "text-neutral-900": true,
-        "text-base": true,
-        "mb-1": true,
-        "dark:text-neutral-100": true,
+        ...labelClasses,
     },
     legend: {
         block: true,
@@ -4972,9 +4646,7 @@ const globals: Record<string, Record<string, boolean>> = {
         "dark:text-neutral-100": true,
     },
     help: {
-        "text-neutral-900": true,
-        "text-sm": true,
-        "dark:text-neutral-100": true,
+        ...helperClasses,
     },
     messages: {
         "": true,
