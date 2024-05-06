@@ -9,7 +9,7 @@
     "preview": "nuxi preview",
     "postinstall": "nuxi prepare"
   },
-  "dependencies": {
+  "devDependencies": {
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

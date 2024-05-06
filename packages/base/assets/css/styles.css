@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: light dark;
+}
+
+@layer base {
+
+    /* slate */
+    :root {
+        --color-primary: 51 65 85; 
+        --color-text: 39 39 42;
+
+        --color-danger: 220 38 38;
+    }
+
+    :root[class~="dark-mode"] {
+        --color-primary: 241 245 249;
+        --color-text: 245 245 245;
+    }
+
+    /* indigo */
+    /* :root {
+        --color-primary: 79 70 229; 
+        --color-text: 39 39 42;
+    }
+
+    :root[class~="dark-mode"] {
+        --color-primary: 99 102 241;
+        --color-text: 245 245 245;
+    } */
+
+    .ring-current {
+        @apply ring-primary;
+    }
+}
