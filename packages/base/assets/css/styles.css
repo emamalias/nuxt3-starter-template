@@ -9,15 +9,17 @@
 @layer base {
 
     /* slate */
-    /* :root {
+    :root {
         --color-primary: 51 65 85; 
         --color-text: 39 39 42;
+
+        --color-danger: 220 38 38;
     }
 
     :root[class~="dark-mode"] {
         --color-primary: 241 245 249;
         --color-text: 245 245 245;
-    } */
+    }
 
     /* indigo */
     :root {
@@ -26,7 +28,7 @@
     }
 
     :root[class~="dark-mode"] {
-        --color-primary: 79 70 229;
+        --color-primary: 99 102 241;
         --color-text: 245 245 245;
     }
 

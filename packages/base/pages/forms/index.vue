@@ -25,30 +25,34 @@
             name="email"
             value=""
             validation="required|email"
-            placeholder="hello@example.com" 
+            placeholder="hello@example.com"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="checkbox"
             label="Terms and Conditions"
             help="Do you agree to our terms of service?"
             name="terms"
-            :value="true"
             validation="accepted"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="color"
             name="color"
-            value="#00FF00"
+            value=""
             label="Select a color"
             help="Select your favorite color."
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="date"
             name="date"
-            value="1999-01-01"
+            value=""
             label="Birthday"
             help="Enter your birth day"
             validation="required|date_before:2010-01-01"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="datetime-local"
@@ -56,6 +60,7 @@
             label="End of the world"
             help="When will the end of the world take place?"
             validation="required|date_after"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="file"
@@ -64,95 +69,119 @@
             accept=".pdf,.doc,.docx,.xml,.md,.csv"
             help="This input starts with files already “attached”."
             multiple="true"
-            :value="[{ name: 'purple-taste.pdf' }, { name: 'chocolate-recipe.docx' }]"
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="month"
             help="What month were you born?"
             label="Birth month"
             name="birth_month"
-            value="1965-09"
+            value=""
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="number"
             help="What temperature should the house be?"
             label="Thermostat"
             name="temperature"
-            value="25"
+            value=""
             step="1"
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="password"
             label="A fancy password input"
             name="password"
-            value="mySecretPassword!"
+            value=""
             prefix-icon="password"
             suffix-icon="eyeClosed"
             @suffix-icon-click="(node: any, e: Event) => {
               node.props.suffixIcon = node.props.suffixIcon === 'eye' ? 'eyeClosed' : 'eye'
               node.props.type = node.props.type === 'password' ? 'text' : 'password'
             }"
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="radio"
             label="Preferred transportation"
             name="radio"
+            value=""
             :options="['E-Bike', 'E-Scooter', 'Electric car', 'Walking', 'Space tube']"
             help="How do you like to get around?"
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="range"
             label="Volume"
             name="range"
+            value=""
             min="0"
             max="11"
             help="Select your volume level."
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="select"
             label="Which country is the smallest?"
             name="select"
+            value=""
             :options="[
               'Monaco',
               'Vatican City',
               'Maldives',
               'Tuvalu',
             ]"
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="tel"
             label="Phone number"
             name="phone"
+            value=""
             placeholder="xxx-xxx-xxxx"
-            validation="matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
+            validation="required|matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
             :validation-messages="{
               matches: 'Phone number must be in the format xxx-xxx-xxxx',
             }"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="text"
             label="Your username"
             name="username"
-            value="emamalias"
+            value=""
             help="Pick a username people will remember!"
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="textarea"
             label="Your Essay"
+            value=""
             name="instructions"
             placeholder="Remember to write in complete sentences."
             :help="`${value.instructions ? value.instructions.length : 0} / 120`"
-            validation="length:0,120"
+            validation="required|length:0,120"
             :validation-messages="{
               length: 'Instructions cannot be more than 120 characters.',
             }"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="time"
             label="Time"
             name="time"
-            value="23:15"
+            value=""
             help="What time will go home today?"
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="url"
@@ -161,13 +190,16 @@
             placeholder="https://www.example.com..."
             validation="required|url"
             help="What is your favorite website?"
+            :validation-visibility="validateOn"
           />
           <FormKit
             type="week"
             label="Vacation"
             name="week"
             help="What week will you travel to Fiji?"
-            value="2025-W02"
+            value=""
+            validation="required"
+            :validation-visibility="validateOn"
           />
           <FormKit type="submit" label="Submit" />
           <pre wrap class="bg-gray-200 p-2">{{ value }}</pre>
@@ -184,6 +216,8 @@
 <script setup lang="ts">
 
 const submitted = ref(false)
+
+const validateOn = 'live'
 
 const submitHandler = async () => {
   // Let's pretend this is an ajax request:
