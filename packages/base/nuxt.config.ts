@@ -8,10 +8,6 @@ export default defineNuxtConfig({
 
     modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode", "@formkit/nuxt"],
 
-    css: [
-        "~base/assets/css/styles.css"
-    ],
-
     postcss: {
         plugins: {
             tailwindcss: {},
