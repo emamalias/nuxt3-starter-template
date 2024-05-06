@@ -1,8 +1,16 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { createResolver } from '@nuxt/kit';
+const { resolve } = createResolver(import.meta.url);
+
 export default defineNuxtConfig({
+    alias: { '~base': resolve('./') },
+
     devtools: { enabled: true },
 
-    modules: ["@nuxtjs/tailwindcss"],
+    modules: ["@nuxtjs/tailwindcss", "@formkit/nuxt"],
+
+    css: [
+        "~base/assets/css/styles.css"
+    ],
 
     postcss: {
         plugins: {
@@ -13,11 +21,5 @@ export default defineNuxtConfig({
 
     imports: {
         dirs: ["utils"],
-    },
-
-    runtimeConfig: {
-        public: {
-            //
-        },
     },
 });

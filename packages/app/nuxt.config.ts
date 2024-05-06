@@ -2,5 +2,9 @@
 export default defineNuxtConfig({
   extends: [
     './../base'
-  ]
+  ],
+
+  formkit: {
+    autoImport: true,
+  }
 })
