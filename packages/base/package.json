@@ -2,6 +2,11 @@
   "name": "base",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "postinstall": "nuxi prepare"
+  },
   "devDependencies": {
     "@formkit/core": "^1.6.2",
     "@formkit/icons": "^1.6.2",
